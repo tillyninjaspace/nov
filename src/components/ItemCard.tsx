@@ -14,30 +14,10 @@ interface Item {
 
 }
 
-// interface ItemProps {
-//   items: Item[]
-// }
-
-{/* <ItemProps></ItemProps> */}
-
 
 interface ChildProps {
   posts: Item[]
 }
-
-//ForItemCard
-
-// const [cardItem, setCardItem] = useState<any{}>({})
-
-// const FindItemCard = () =>{
-//   const itemId = useParams()
-//   console.log("Current card ID", itemId)
-// };
-
-// useEffect( ()=> {
-//   FindItemCard()
-// }, []);
-// End Item Card
 
 export const ItemCard: React.FC<ChildProps>= (props) => {
 
@@ -51,9 +31,6 @@ export const ItemCard: React.FC<ChildProps>= (props) => {
 
   return (
     <div>
-    
-      {/* <h2>Card ID:{cardId}</h2> */}
-  
       {foundItem &&
       <>
         <h2>{foundItem.name}</h2>
