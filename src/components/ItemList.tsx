@@ -41,11 +41,18 @@ useEffect( () =>{
       maxWidth: "250px", padding: "1em"
       }}>
       <p>{post.id}</p>
-      <p>{post.name}</p>
+      <h3>{post.name}</h3>
       <p>{post.description}</p>
-      {/* { post.imageUrls((image: any) =>
-      <p>{image}</p>
-      )} */}
+
+      { post && post.variants.length > 0 ?
+        post.variants.map((variant:any) =>
+        <p key={variant.id}>
+          Items: {variant.name}
+        </p>
+        )
+        : ''
+      } 
+
     </div>
   
   )}
