@@ -6,8 +6,12 @@ import { ItemCard } from "components";
 
 const URL = 'http://localhost:3001/items';
 
+
+interface arrayOfObjects extends Array<{}> {}
+
 export const ItemList: React.FC = () => {
 
+  // const [posts, setPosts] = useState<any[]>([])
   const [posts, setPosts] = useState<any[]>([])
 
   const fetchPosts = async () => {
@@ -36,11 +40,17 @@ useEffect( () =>{
   })
 },[]);
 
+var fetchedPostList: arrayOfObjects[] = posts;
 
-  return  <div style={{display:"flex", flexWrap: "wrap",
+  return  <Router>
+
+
+  <div style={{display:"flex", flexWrap: "wrap",
   justifyContent: "center"}}>
   {/* <h1>Build Stuff Here for Postal</h1> */}
  
+
+<Route exact path = "/">
   {posts && posts.map((post) => 
     <div key={post.id} style={{border: ".5em solid gray",
       maxWidth: "300px", padding: ".5em", display: "flex",
@@ -70,11 +80,21 @@ useEffect( () =>{
         }}>Select</button>
 
     </div>
+    )}
+</Route>  
+
+
+
+ 
   
-  )}
-  <Router>
-  {/* <Route path="/:itemId"><ItemCard posts={posts}/></Route> */}
-  </Router>
+  {/* <Route path="/:itemId"> */}
+
+  <Route exact path="/:itemId">
+   <ItemCard posts= {posts}/>
+   {/* <ItemCard /> */}
+  </Route>
+
   </div>
+  </Router>
   ;
 };

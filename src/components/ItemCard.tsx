@@ -1,19 +1,36 @@
 import React from "react";
 
 interface Item {
+  id: number;
   name: string;
   description: string;
-  variants: [];
+  // variants: [];
+
 }
 
-interface ItemProps {
-  items: Item[]
+// interface ItemProps {
+//   items: Item[]
+// }
+
+{/* <ItemProps></ItemProps> */}
+
+
+interface ChildProps {
+  posts: Item[]
 }
 
-export const ItemCard: React.FC<ItemProps> = (props) => {
+
+export const ItemCard: React.FC<ChildProps>= (props) => {
   return (
     <div>
-      {props.items[1].name}
+      <p> Hello Item Card</p>
+
+  
+      {props.posts.map((thing) => 
+        <p key={thing.id}>{thing.name}</p>
+      )} 
+
+
     </div>
   )
   
