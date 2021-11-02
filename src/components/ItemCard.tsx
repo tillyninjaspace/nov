@@ -1,5 +1,21 @@
 import React from "react";
 
-export const ItemCard: React.FC = () => {
-  return null;
+interface Item {
+  name: string;
+  description: string;
+  variants: [];
+}
+
+interface ItemProps {
+  items: Item[]
+}
+
+export const ItemCard: React.FC<ItemProps> = (props) => {
+  return (
+    <div>
+      {props.items[1].name}
+    </div>
+  )
+  
+  
 };
