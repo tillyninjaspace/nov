@@ -1,13 +1,14 @@
 
 import React, {useEffect, useState} from "react";
 import {BrowserRouter as Router,
-        Route} from 'react-router-dom';
+        Route,
+        Link } from 'react-router-dom';
 import { ItemCard } from "components";
 
 const URL = 'http://localhost:3001/items';
 
 
-interface arrayOfObjects extends Array<{}> {}
+// interface arrayOfObjects extends Array<{}> {}
 
 export const ItemList: React.FC = () => {
 
@@ -40,7 +41,7 @@ useEffect( () =>{
   })
 },[]);
 
-var fetchedPostList: arrayOfObjects[] = posts;
+// var fetchedPostList: arrayOfObjects[] = posts;
 
   return  <Router>
 
@@ -77,7 +78,9 @@ var fetchedPostList: arrayOfObjects[] = posts;
       } 
    
       <button style={{padding: "1em", color: "teal"
-        }}>Select</button>
+        }}>
+        <Link to={"/" + post.id} className="singleCardItem"><span style={{marginLeft: "1.1em"}}>SELECT</span></Link>
+        </button>
 
     </div>
     )}
