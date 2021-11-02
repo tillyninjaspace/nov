@@ -7,12 +7,7 @@ import { ItemCard } from "components";
 
 const URL = 'http://localhost:3001/items';
 
-
-// interface arrayOfObjects extends Array<{}> {}
-
 export const ItemList: React.FC = () => {
-
-  // const [posts, setPosts] = useState<any[]>([])
   const [posts, setPosts] = useState<any[]>([])
 
   const fetchPosts = async () => {
@@ -87,14 +82,8 @@ useEffect( () =>{
 </Route>  
 
 
-
- 
-  
-  {/* <Route path="/:itemId"> */}
-
   <Route exact path="/:itemId">
    <ItemCard posts= {posts}/>
-   {/* <ItemCard /> */}
   </Route>
 
   </div>
