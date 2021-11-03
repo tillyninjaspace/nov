@@ -6,6 +6,7 @@ import {BrowserRouter as Router,
 import { ItemCard } from "components";
 
 const URL = 'http://localhost:3001/items';
+const variantSize = 4
 
 export const ItemList: React.FC = () => {
   const [posts, setPosts] = useState<any[]>([])
@@ -33,47 +34,51 @@ useEffect( () =>{
 
   return  <Router>
 
-  <div style={{display:"flex", flexWrap: "wrap",
-  justifyContent: "center"}}>
+  <div className="itemListMain">
 
-  <Route exact path = "/">
-  {posts && posts.map((post) => 
-    <div key={post.id} style={{border: ".5em solid gray",
-      maxWidth: "300px", padding: ".5em", display: "flex",
-      flexDirection: "column", margin: ".25em", justifyContent: "space-between"
-      }}>
-      <h3>{post.name}</h3>
-      <p>Description: {post.description}</p>
+    <Route exact path = "/">
+    {posts && posts.map((post) => 
+      <div key={post.id} className="itemList">
+        <h3>{post.name}</h3>
+        <p>Description: {post.description}</p>
 
-      { post && post.variants.length > 0 && 
-      post.variants.length < 5
-       ?
-        post.variants.map((variant:any) =>
-        <p key={variant.id}>
-          Item: {variant.name}
-        </p>
-        )
-        : post.variants.length > 5 &&
-        <p style={{backgroundColor: "lightblue"}}>
-      
-         There are more than 4 items.
+        { post && post.variants.length > 0 && 
+        post.variants.length < 5
+        ?
+          post.variants.map((variant:any) =>
+          <p key={variant.id}>
+            Item: {variant.name}
+          </p>
+          )
+          : post.variants.length >= 5 &&
+          <p>
+          {
+            post.variants.slice(0, variantSize).map((variant:any) => 
+            <p key={variant.id}>
+              Item: {variant.name}
+            
+            
+            </p>
+            )
+          }
+              <span className="manyVariants">
+              ...There are more than 4 items.
+              </span>
+          </p>
+        } 
+    
+        <button>
+          <Link to={"/" + post.id}><span>SELECT</span></Link>
+          </button>
 
-        </p>
-      } 
-   
-      <button style={{padding: "1em", color: "teal"
-        }}>
-        <Link to={"/" + post.id} className="singleCardItem"><span style={{marginLeft: "1.1em"}}>SELECT</span></Link>
-        </button>
-
-    </div>
-    )}
-  </Route>  
+      </div>
+      )}
+    </Route>  
 
 
-  <Route exact path="/:itemId">
-   <ItemCard posts= {posts}/>
-  </Route>
+    <Route exact path="/:itemId">
+    <ItemCard posts= {posts}/>
+    </Route>
 
   </div>
   </Router>

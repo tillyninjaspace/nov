@@ -19,8 +19,6 @@ interface ChildProps {
 
 export const ItemCard: React.FC<ChildProps>= (props) => {
   const { itemId } = useParams<{ itemId: string }>();
-  console.log("Item ID:", itemId)
-
   const foundItem = props.posts.find(singleItem => itemId === singleItem.id);
   console.log("Find Item", foundItem)
 
@@ -41,9 +39,14 @@ export const ItemCard: React.FC<ChildProps>= (props) => {
         <h2>{foundItem.name}</h2>
         <p>{foundItem.id}</p>
         <p>{foundItem.description}</p>
+        <h4>{foundItem.variants.length} Items</h4>
         {
           foundItem.variants.map((variant:any, idx ) =>
-            <p key={idx}>{variant.name}</p>
+            <section className='variantItem'>
+            <h3 key={idx}>Item: {variant.name}</h3>
+            <p>Description: {variant.description}</p>
+            <h4>Price: {variant.price}</h4>
+            </section>
           )
         }
         </section>
