@@ -1,8 +1,8 @@
 import React from "react";
 import {useParams, Link} from "react-router-dom";
-import './style.css';
+import "./style.css";
 
-const itemURL = 'http://localhost:3001/items/';
+const itemURL = "http://localhost:3001/items/";
 
 interface Item {
   id: string;
