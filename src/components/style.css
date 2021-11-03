@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
 .itemListMain {
     display: flex;
     flex-wrap: wrap;
@@ -12,21 +13,36 @@
     flex-direction: column;
     margin: .25em;
     justify-content: space-between;
+    align-items: center;
 }
 
 button {
-    padding: .5em;
-    color: teal;
+    padding: 1em;
+    background-color: rgb(73, 119, 187);
+    border-radius: 3px;
+    color: #ffffff;
+    width: 60px;
 }
 
 button:hover {
-    color: black
+    background-color: rgb(73, 119, 187);
+    color: white;
+}
+
+a {
+    color: white;
+    background-color:rgb(73, 119, 187);
+    padding: .25em;
 }
 
 .manyVariants {
     background-color: lightblue;
     padding: .25em;
     border-radius: 3px;
+}
+
+.link {
+    color: rgb(73, 119, 187);
 }
 
 .itemMain {
@@ -43,6 +59,17 @@ button:hover {
     padding: 1em;
 }
 
+img {
+    border: .25em solid gray;
+}
+
+.price {
+    color:rgb(73, 119, 187);
+}
+
+h2, h3, h4, p {
+    font-family: 'Space Grotesk', sans-serif;
+}
 
 @media (max-width: 1000px) {
     .itemMain {

@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from "react";
 import {BrowserRouter as Router,
         Route,
@@ -67,9 +66,9 @@ useEffect( () =>{
           </p>
         } 
     
-        <button>
-          <Link to={"/" + post.id}><span>SELECT</span></Link>
-          </button>
+        <h4>
+          <Link to={"/" + post.id}>SELECT</Link>
+        </h4>
 
       </div>
       )}

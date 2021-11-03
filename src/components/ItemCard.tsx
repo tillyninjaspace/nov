@@ -21,6 +21,10 @@ export const ItemCard: React.FC<ChildProps>= (props) => {
   const { itemId } = useParams<{ itemId: string }>();
   const foundItem = props.posts.find(singleItem => itemId === singleItem.id);
   console.log("Find Item", foundItem)
+  const priceFormatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
 
   return (
     <div className="itemMain">
@@ -28,7 +32,7 @@ export const ItemCard: React.FC<ChildProps>= (props) => {
       {foundItem &&
       <>
         <section>
-        <p><Link to={"/"}>Back to Marketplace</Link></p>
+        <h4 className="link"><Link to={"/"}>Back to Marketplace</Link></h4>
         {
           foundItem.imageUrls.map((picture:any, idx ) =>
             <img key={idx} src={picture.url}/>
@@ -37,15 +41,18 @@ export const ItemCard: React.FC<ChildProps>= (props) => {
         </section>
         <section>
         <h2>{foundItem.name}</h2>
-        <p>{foundItem.id}</p>
         <p>{foundItem.description}</p>
-        <h4>{foundItem.variants.length} Items</h4>
+        <h3>{foundItem.variants.length} Items</h3>
         {
           foundItem.variants.map((variant:any, idx ) =>
             <section className='variantItem'>
             <h3 key={idx}>Item: {variant.name}</h3>
             <p>Description: {variant.description}</p>
-            <h4>Price: {variant.price}</h4>
+
+      
+
+
+            <h4 className="price">Price: {priceFormatter.format(variant.price)}</h4>
             </section>
           )
         }
