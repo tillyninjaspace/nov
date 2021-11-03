@@ -14,7 +14,6 @@ export const ItemList: React.FC = () => {
     try {
         const data = await fetch(URL)
         const response = await data.json();
-        console.log("Response", response)
         return response
     } catch (error) {
         console.error(error)
@@ -45,25 +44,23 @@ useEffect( () =>{
         post.variants.length < 5
         ?
           post.variants.map((variant:any) =>
-          <p key={variant.id}>
+          <div key={variant.id}>
             Item: {variant.name}
-          </p>
+          </div>
           )
           : post.variants.length >= 5 &&
-          <p>
+          <div>
           {
             post.variants.slice(0, variantSize).map((variant:any) => 
-            <p key={variant.id}>
-              Item: {variant.name}
-            
-            
-            </p>
+            <div key={variant.id}>
+              <p className="variantItems">Item: {variant.name}</p>
+            </div>
             )
           }
               <span className="manyVariants">
               ...There are more than 4 items.
               </span>
-          </p>
+          </div>
         } 
     
         <h4>

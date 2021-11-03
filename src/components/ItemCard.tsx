@@ -20,7 +20,6 @@ interface ChildProps {
 export const ItemCard: React.FC<ChildProps>= (props) => {
   const { itemId } = useParams<{ itemId: string }>();
   const foundItem = props.posts.find(singleItem => itemId === singleItem.id);
-  console.log("Find Item", foundItem)
   const priceFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -45,13 +44,9 @@ export const ItemCard: React.FC<ChildProps>= (props) => {
         <h3>{foundItem.variants.length} Items</h3>
         {
           foundItem.variants.map((variant:any, idx ) =>
-            <section className='variantItem'>
-            <h3 key={idx}>Item: {variant.name}</h3>
+            <section key={idx} className='variantItem'>
+            <h3>Item: {variant.name}</h3>
             <p>Description: {variant.description}</p>
-
-      
-
-
             <h4 className="price">Price: {priceFormatter.format(variant.price)}</h4>
             </section>
           )

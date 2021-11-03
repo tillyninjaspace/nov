@@ -59,6 +59,10 @@ a {
     padding: 1em;
 }
 
+.variantItems {
+    padding-bottom: .5em;
+}
+
 img {
     border: .25em solid gray;
 }
@@ -67,7 +71,7 @@ img {
     color:rgb(73, 119, 187);
 }
 
-h2, h3, h4, p {
+body {
     font-family: 'Space Grotesk', sans-serif;
 }
 
