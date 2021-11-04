@@ -39,7 +39,9 @@ export const ItemCard: React.FC<ChildProps>= (props) => {
         <section>
         <h2>{foundItem.name}</h2>
         <p>{foundItem.description}</p>
-        <h3>{foundItem.variants.length} Items</h3>
+        {foundItem.variants.length > 1? <h3>{foundItem.variants.length} Items</h3>
+        : <h3>{foundItem.variants.length} Item</h3>
+        }     
         {
           foundItem.variants.map((variant:any, idx ) =>
             <section key={idx} className='variantItem'>
