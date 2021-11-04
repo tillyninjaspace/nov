@@ -84,6 +84,11 @@ section:last-child{
     text-align: right;
 }
 
+.itemsLink {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 1000px) {
     .itemMain {
         display: flex;

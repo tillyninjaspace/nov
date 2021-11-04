@@ -32,9 +32,13 @@ useEffect( () =>{
 
   return  <Router>
   <h1>Wander Market</h1>
+    <Route exact path = "/">
+    <Link className="itemsLink" to={"/items"}>Go to Marketplace Items</Link>
+    </Route>
+
   <div className="itemListMain">
     
-    <Route exact path = "/">
+    <Route exact path = "/items">
     {posts && posts.map((post) => 
       <div key={post.id} className="itemList">
         <h3>{post.name}</h3>
@@ -64,7 +68,7 @@ useEffect( () =>{
         } 
     
         <h4>
-          <Link to={"/" + post.id}>SELECT</Link>
+          <Link to={"/items/" + post.id}>SELECT</Link>
         </h4>
 
       </div>
@@ -72,7 +76,7 @@ useEffect( () =>{
     </Route>  
 
 
-    <Route exact path="/:itemId">
+    <Route exact path="/items/:itemId">
     <ItemCard posts= {posts}/>
     </Route>
 
