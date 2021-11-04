@@ -31,9 +31,9 @@ useEffect( () =>{
 },[]);
 
   return  <Router>
-
+  <h1>Wander Market</h1>
   <div className="itemListMain">
-
+    
     <Route exact path = "/">
     {posts && posts.map((post) => 
       <div key={post.id} className="itemList">

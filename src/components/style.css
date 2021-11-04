@@ -75,6 +75,11 @@ body {
     font-family: 'Space Grotesk', sans-serif;
 }
 
+h1 {
+    text-align: center;
+    color: rgb(77, 73, 73);
+}
+
 @media (max-width: 1000px) {
     .itemMain {
         display: flex;
