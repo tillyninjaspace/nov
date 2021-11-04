@@ -47,7 +47,7 @@ a {
 
 .itemMain {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 2fr));
     height: 100%;
     border: .5em solid gray;
     margin: 1em;
@@ -78,6 +78,10 @@ body {
 h1 {
     text-align: center;
     color: rgb(77, 73, 73);
+}
+
+section:last-child{
+    text-align: right;
 }
 
 @media (max-width: 1000px) {
