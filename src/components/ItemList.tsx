@@ -58,7 +58,7 @@ useEffect( () =>{
             )
           }
               <span className="manyVariants">
-              ...There are more than 4 items.
+              ...plus {post.variants.length-variantSize} more
               </span>
           </div>
         } 
