@@ -29,7 +29,7 @@ export const ItemCard: React.FC<ChildProps>= (props) => {
       {foundItem &&
       <>
         <section>
-        <h4 className="link"><Link to={"/"}>Back to Marketplace</Link></h4>
+        <h4 className="link"><Link to={"/items"}>Back to Marketplace</Link></h4>
         {
           foundItem.imageUrls.map((picture:any, idx ) =>
             <img key={idx} src={picture.url}/>
