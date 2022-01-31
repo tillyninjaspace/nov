@@ -1,6 +1,8 @@
 YARN Project Notes:
 When cloning to start up and test, remember to seed the database first to see the posts.
 
+![Items Page](https://res.cloudinary.com/ninjaspacecontent/image/upload/c_thumb,w_200,g_face/v1643605036/tier2_completion_xzvlru.png) [](https://res.cloudinary.com/ninjaspacecontent/image/upload/c_thumb,w_200,g_face/v1643605036/tier2_completion_xzvlru.png)
+
 Contact Tilly Wright for any questions about my work.
 
 ### Intro
