@@ -1,3 +1,8 @@
+YARN Project Notes:
+When cloning to start up and test, remember to seed the database first to see the posts.
+
+Contact Tilly Wright for any questions about my work.
+
 ### Intro
 
 This exercise is to test your understanding of JavaScript/TypeScript and the React framework in a real world setting. The goal is to create a mock-up of a generic marketplace page using an API that is similar in structure to the api we use at Postal.
