@@ -16,6 +16,15 @@
     align-items: center;
 }
 
+.itemList:hover {
+    background-image: none;
+}
+
+div.itemList p:hover {
+    color: purple;
+    opacity: .9;
+}
+
 button {
     padding: 1em;
     background-color: rgb(73, 119, 187);

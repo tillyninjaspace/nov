@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {BrowserRouter as Router,
         Route,
+        Redirect,
         Link } from "react-router-dom";
 import { ItemCard } from "components";
 
@@ -32,15 +33,19 @@ useEffect( () =>{
 
   return  <Router>
   <h1>Wander Market</h1>
-    <Route exact path = "/">
-    <Link className="itemsLink" to={"/items"}>Go to Marketplace Items</Link>
+    <Route path = "/">
+      <Redirect to="/items" />
+      <Link className="itemsLink" to={"/items"}>Go to Marketplace Items</Link>
     </Route>
 
   <div className="itemListMain">
     
     <Route exact path = "/items">
     {posts && posts.map((post) => 
-      <div key={post.id} className="itemList">
+      <div key={post.id} className="itemList"
+        style ={{backgroundImage: `url(${post.imageUrls[0].url})`
+        }}>
+
         <h3>{post.name}</h3>
         <p>Description: {post.description}</p>
 
