@@ -32,10 +32,10 @@ useEffect( () =>{
 },[]);
 
   return  <Router>
+  <h3 id="header"><Link className="itemsLink" to={"/items"}>Marketplace</Link></h3>
   <h1>Wander Market</h1>
-    <Route path = "/">
+    <Route exact path = "/">
       <Redirect to="/items" />
-      <Link className="itemsLink" to={"/items"}>Go to Marketplace Items</Link>
     </Route>
 
   <div className="itemListMain">
@@ -78,14 +78,17 @@ useEffect( () =>{
 
       </div>
       )}
+    
     </Route>  
-
+    
 
     <Route exact path="/items/:itemId">
     <ItemCard posts= {posts}/>
     </Route>
 
   </div>
+  <h3 id="footer">&copy;{ (new Date().getFullYear())} Wander Market by Developer: 
+  <a href="https://tillywright.com" target="_blank">Tilly Wright</a></h3>  
   </Router>
   ;
 };

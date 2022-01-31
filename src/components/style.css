@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .itemListMain {
     display: flex;
     flex-wrap: wrap;
@@ -11,18 +17,13 @@
     padding: .5em; 
     display: flex;
     flex-direction: column;
-    margin: .25em;
+    margin: .5em;
     justify-content: space-between;
     align-items: center;
 }
 
-.itemList:hover {
-    background-image: none;
-}
-
-div.itemList p:hover {
-    color: purple;
-    opacity: .9;
+div.itemList:hover {
+    background-image: none !important;
 }
 
 button {
@@ -38,10 +39,19 @@ button:hover {
     color: white;
 }
 
-a {
+a, #footer {
     color: white;
     background-color:rgb(73, 119, 187);
-    padding: .25em;
+    padding: .5em;
+}
+
+#header {
+    margin-top: 0;
+}
+
+#footer {
+    margin-bottom: 0;
+    margin-top: .25em;
 }
 
 .manyVariants {
@@ -87,15 +97,19 @@ body {
 h1 {
     text-align: center;
     color: rgb(77, 73, 73);
+    padding: 1em;
+    font-size: 3em;
 }
 
 section:last-child{
     text-align: right;
+    transition: width 2s, height 4s;
 }
 
 .itemsLink {
     display: flex;
     justify-content: center;
+    font-size: 1.25em;
 }
 
 @media (max-width: 1000px) {
